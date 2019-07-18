@@ -50,7 +50,7 @@ function total() {
 
 function removeFromCart(item) {
   var plzBro = -1;
-  for (index in cart) {
+  for (var index in cart) {
     if (cart[index].itemName == item) {
       plzBro = index;
     }
