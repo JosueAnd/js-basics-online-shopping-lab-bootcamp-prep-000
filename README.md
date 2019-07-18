@@ -49,12 +49,12 @@ function total() {
 }
 
 function removeFromCart(item) {
-  for (ite in cart) {
-    if (cart[ite].itemName == item) {
-      cart.splice(ite, 1);
-      test = 1;
-      return cart;
-    }
+  var itemIndex = cart.indexOf(item);
+  if(itemIndex != -1) {
+    getCart().splice(itemIndex);
+    return cart;
+  } else {
+      return "That item is not in your cart.";
   }
 }
 
