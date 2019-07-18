@@ -5,7 +5,7 @@ function getCart() {
 }
 
 function setCart(c) {
-  cart = null;
+  cart = c;
   return cart;
 }
 
@@ -64,11 +64,14 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
+    function clearCart() {
+        cart = [];
+    }
     if(cardNumber == null) {
         return "Sorry, we don't have a credit card on file for you.";
     } else {
         var orderTotal = total();
-        setCart();
+        clearCart();
         return `Your total cost is $${orderTotal}, which will be charged to the card ${cardNumber}.`;
     }
 }
