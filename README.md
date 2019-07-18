@@ -51,7 +51,7 @@ function total() {
 function removeFromCart(item) {
   var itemIndex = cart.indexOf(item);
   if(itemIndex != -1) {
-    getCart().splice(itemIndex);
+    getCart().splice(itemIndex, 1);
     return cart;
   } else {
       return "That item is not in your cart.";
